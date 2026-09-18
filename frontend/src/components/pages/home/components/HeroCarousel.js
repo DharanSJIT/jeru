@@ -31,12 +31,6 @@ const SLIDES = [
         title: "Follow every application in one place",
         alt: "Application status tracking on the Makkal Thunai portal",
     },
-    {
-        src: banner1,
-        tag: "Support",
-        title: "Support for every stage of life",
-        alt: "Support across education, health, housing and work",
-    },
 ];
 
 const AUTOPLAY_MS = 3500;
@@ -124,7 +118,7 @@ const HeroCarousel = () => {
                 onBlur={() => setPaused(false)}
                 onKeyDown={onKeyDown}
                 tabIndex={0}
-                className={`relative rounded-[28px] overflow-hidden shadow-lift ring-1 ring-slate-900/5 bg-navy outline-none focus-visible:ring-4 focus-visible:ring-brand/40 ${
+                className={`relative rounded-[28px] overflow-hidden shadow-lift ring-1 ring-slate-900/5 bg-white outline-none focus-visible:ring-4 focus-visible:ring-brand/40 ${
                     paused ? "carousel-paused" : ""
                 }`}
             >
@@ -150,7 +144,7 @@ const HeroCarousel = () => {
                             <img
                                 src={slide.src}
                                 alt={i === index ? slide.alt : ""}
-                                className="w-full h-full object-contain bg-black/20"
+                                className="w-full h-full object-contain bg-white"
                                 loading={i === 0 ? "eager" : "lazy"}
                                 fetchpriority={i === 0 ? "high" : "low"}
                                 decoding="async"
@@ -185,23 +179,7 @@ const HeroCarousel = () => {
                     ))}
                 </div>
 
-                {/* Prev / next controls */}
-                <button
-                    type="button"
-                    onClick={() => goTo(index - 1)}
-                    aria-label="Previous slide"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 text-primary shadow-card hover:bg-brand hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center"
-                >
-                    <ChevronLeft className="w-5 h-5" aria-hidden="true" />
-                </button>
-                <button
-                    type="button"
-                    onClick={() => goTo(index + 1)}
-                    aria-label="Next slide"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 text-primary shadow-card hover:bg-brand hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center"
-                >
-                    <ChevronRight className="w-5 h-5" aria-hidden="true" />
-                </button>
+                {/* Prev / next controls removed as per user request */}
             </div>
 
             {/* Thumbnail rail */}

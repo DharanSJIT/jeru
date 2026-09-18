@@ -71,6 +71,39 @@ code {
   padding: 0 1rem;
 }
 
+/* ---------- Hero carousel ---------- */
+
+/* Slow zoom on the active slide while it is on screen */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+.slide-zoom {
+  animation: kenburns 7s ease-out forwards;
+  will-change: transform;
+}
+
+/* Autoplay progress bar — scales 0 -> 1 across the slide duration */
+@keyframes carousel-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.carousel-progress-fill {
+  transform-origin: left center;
+  animation: carousel-progress 4.5s linear forwards;
+}
+.carousel-paused .carousel-progress-fill {
+  animation-play-state: paused;
+}
+
 /* ---------- Scroll-reveal system ---------- */
 
 .reveal {

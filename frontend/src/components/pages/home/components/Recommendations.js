@@ -39,9 +39,7 @@ const Recommendations = () => {
                 <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] border-[3px] border-white/10 rounded-[4rem] rotate-12 hidden lg:block pointer-events-none" aria-hidden="true" />
 
                 <div className="container mx-auto max-w-4xl relative z-10 text-center">
-                    <span className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 border border-white/20 mb-8 animate-bounce-soft">
-                        <Sparkles className="w-8 h-8 text-white" aria-hidden="true" />
-                    </span>
+                    
                     <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/80 mb-4">
                         For You
                     </p>

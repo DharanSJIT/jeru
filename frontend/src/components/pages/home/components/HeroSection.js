@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronRight, FileText, BadgeCheck, ArrowDown } from 'lucide-react';
-import banner2 from "../../../../assets/banner2.webp";
 import { useNavigate } from 'react-router-dom';
+import HeroCarousel from "./HeroCarousel";
 
 const ROTATING_WORDS = ["you", "your family", "students", "farmers", "women", "entrepreneurs"];
 
@@ -44,7 +44,7 @@ const HeroSection = () => {
     ];
 
     return (
-        <section id="home" className="relative min-h-[calc(100dvh-5rem)] flex items-center bg-white overflow-hidden pt-12 lg:pt-16">
+        <section id="home" className="relative min-h-[calc(100dvh-5rem)] flex items-center bg-white overflow-hidden pt-12 lg:pt-16 pb-16 lg:pb-20">
             {/* Massive typographic background element (flat, single color) */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-[10%] opacity-[0.035] pointer-events-none select-none overflow-hidden hidden lg:block">
                 <span className="block text-[24vw] font-display font-extrabold leading-none whitespace-nowrap text-primary">
@@ -105,35 +105,15 @@ const HeroSection = () => {
                     </div>
                 </div>
 
-                {/* Right — framed visual with floating chips */}
-                <div className="relative w-full max-w-[560px] mx-auto lg:ml-auto animate-slide-left stagger-3 hidden md:block">
+                {/* Right — sliding image carousel with floating chips */}
+                <div className="relative w-full max-w-[560px] mx-auto lg:ml-auto animate-slide-left stagger-3 mb-4">
                     {/* Offset deco frames (flat borders) */}
                     <div className="deco-frame -top-5 -left-5 w-40 h-40 rotate-6" aria-hidden="true" />
                     <div className="deco-frame -bottom-6 -right-4 w-56 h-56 -rotate-3 border-brand/15" aria-hidden="true" />
 
-                    <div className="relative rounded-[28px] overflow-hidden shadow-lift ring-1 ring-slate-900/5 group">
-                        <img
-                            src={banner2}
-                            alt="Citizen reviewing government schemes on the Makkal Thunai portal"
-                            className="w-full h-[420px] lg:h-[520px] object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                            loading="eager"
-                            fetchpriority="high"
-                            decoding="async"
-                        />
-                        {/* Flat blue panel strip on image bottom */}
-                        <div className="absolute inset-x-0 bottom-0 bg-navy/85 backdrop-blur-sm px-6 py-4 flex items-center justify-between text-white">
-                            <p className="font-body text-sm font-medium">
-                                <span className="font-display font-bold text-lg text-white">500+</span>{" "}
-                                <span className="text-slate-300">active schemes</span>
-                            </p>
-                            <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse-soft" aria-hidden="true" />
-                        </div>
-                    </div>
+                    <HeroCarousel />
 
-                    {/* Floating chip — eligibility */}
-                   
-                    {/* Floating chip — trusted */}
-                   
+                    
                 </div>
             </div>
 

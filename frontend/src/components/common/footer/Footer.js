@@ -5,7 +5,6 @@ import facebook from "../../../utils/images/footer/facebook.png";
 import youtube from "../../../utils/images/footer/youtube.png";
 import x from "../../../utils/images/footer/twitter.png";
 import { Link } from "react-router-dom";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -86,11 +85,11 @@ const Footer = () => {
                                 </span>
                                 <span className="font-medium group-hover:text-white transition-colors duration-300">+91 12345 67890</span>
                             </a>
-                            <a href="mailto:9582anupamk@gmail.com" className="flex items-center gap-3 group cursor-pointer">
+                            <a href="makkalthunai@gmail.com" className="flex items-center gap-3 group cursor-pointer">
                                 <span className="p-2.5 bg-white/5 rounded-xl border border-white/10 group-hover:bg-brand group-hover:border-brand transition-all duration-300 group-hover:-translate-y-0.5">
                                     <img src={mail} alt="" className="w-5 h-5 filter invert" />
                                 </span>
-                                <span className="font-medium group-hover:text-white transition-colors duration-300">9582anupamk@gmail.com</span>
+                                <span className="font-medium group-hover:text-white transition-colors duration-300">makkalthunai@gmail.com</span>
                             </a>
                         </div>
                     </div>

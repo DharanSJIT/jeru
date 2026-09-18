@@ -100,7 +100,7 @@ const FAQ = () => {
                                 Our team is happy to help you find the right scheme.
                             </p>
                             <a
-                                href="mailto:9582anupamk@gmail.com"
+                                href="makkalthunai@gmail.com"
                                 className="inline-flex items-center gap-2 font-body font-semibold text-sm text-white bg-white/10 hover:bg-brand transition-colors duration-300 rounded-full px-5 py-2.5"
                             >
                                 Contact support

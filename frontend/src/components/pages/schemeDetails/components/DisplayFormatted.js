@@ -175,6 +175,14 @@ const RenderContent = ({ content }) => {
                 return <TableComponent key={index} children={item.children} />;
 
             default:
+                // Fallback for simple database structures like { details: "..." } or { documentName: "..." }
+                if (item.details) {
+                    return <div key={index} className="my-2">{item.details}</div>;
+                }
+                if (item.documentName) {
+                    return <div key={index} className="my-2">• {item.documentName}</div>;
+                }
+                
                 return (
                     <div key={index} className="my-2">
                         {renderChildren(item.children)}

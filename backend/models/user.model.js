@@ -4,104 +4,157 @@ import jwt from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema(
     {
-        name: {
-            type: String,
-            required: true
-        },
+        // CORE AUTH FIELDS
+        name: { type: String, required: true },
         email: {
             type: String,
             required: true,
             unique: true,
-            // Email validation pattern: matches a standard email format
             match: new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/),
         },
-        password: {
-            type: String,
-            required: true,
-            minlength: 6,
-        },
-        phoneNumber: {
-            type: String,
-        },
-        role: {
-            type: String,
-            enum: ["USER", "ADMIN"],
-            default: "USER",
-            required: true,
+        password: { type: String, required: true, minlength: 6 },
+        phoneNumber: { type: String },
+        role: { type: String, enum: ["USER", "ADMIN"], default: "USER", required: true },
+        refreshToken: { type: String, default: null },
+        
+        // SYSTEM FIELDS
+        favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Scheme' }],
+        hasCompletedProfile: { type: Boolean, default: false },
+        profileCompletionPercentage: { type: Number, default: 0 },
+
+        // --- CITIZEN PROFILE DATA ---
+
+        // 1. Personal Information
+        personal: {
+            firstName: String,
+            middleName: String,
+            lastName: String,
+            dob: Date,
+            age: Number,
+            gender: { type: String, enum: ['male', 'female', 'other', 'prefer_not_to_say', 'Male', 'Female', 'Other'] },
+            maritalStatus: String,
+            fatherName: String,
+            motherName: String,
+            spouseName: String,
+            alternateMobile: String,
+            preferredLanguage: String,
+            nationality: { type: String, default: 'Indian' }
         },
 
-        refreshToken: {
-            type: String, // The refresh token itself
-            default: null,
+        // 2. Address & Domicile
+        address: {
+            currentAddress: String,
+            permanentAddress: String,
+            sameAsCurrent: Boolean,
+            houseNumber: String,
+            street: String,
+            areaLocality: String,
+            villageTownCity: String,
+            taluk: String,
+            district: String,
+            state: { type: String, default: 'Tamil Nadu' },
+            pincode: String,
+            residenceType: String,
+            ruralUrban: { type: String, enum: ['Urban', 'Rural'] },
+            isMigrant: Boolean
         },
 
-        // array of strings
-        interests: {
-            type: [String],
+        // 3. Social Category
+        social: {
+            category: { type: String, enum: ['General', 'BC', 'MBC', 'SC', 'ST', 'OBC', 'EWS'] },
+            community: String,
+            casteCertificateAvailable: Boolean,
+            casteCertificateNumber: String,
+            isMinority: Boolean,
+            minorityCommunity: String,
+            isEWS: Boolean
         },
 
-        incomeGroup: {
-            type: String,
-            enum: ['EWS', 'General', 'OBC', 'SC', 'ST'],
-
+        // 4. Education
+        education: {
+            isStudying: Boolean,
+            highestQualification: String,
+            currentLevel: String,
+            institutionName: String,
+            institutionType: { type: String, enum: ['Government', 'Private', 'Aided'] },
+            courseName: String,
+            yearOfStudy: String,
+            isFirstGenGraduate: Boolean,
+            marksPercentage: Number,
+            passedYear: String,
+            receivingScholarship: Boolean
         },
 
-        state: {
-            type: String,
+        // 5. Employment
+        employment: {
+            status: { type: String, enum: ['student', 'employed', 'self_employed', 'farmer', 'unemployed', 'homemaker', 'retired', 'other'] },
+            occupation: String,
+            sector: { type: String, enum: ['Government', 'Private', 'Public Sector', 'Unorganized'] },
+            jobType: String,
+            annualIncome: Number,
+            isJobSeeker: Boolean,
+            employmentExchangeRegistered: Boolean
         },
 
-        age: {
-            type: Number,
+        // 6. Family
+        family: [{
+            name: String,
+            relationship: String,
+            age: Number,
+            gender: String,
+            occupation: String,
+            annualIncome: Number,
+            isDependent: Boolean
+        }],
+        
+        familyStats: {
+            familySize: Number,
+            adults: Number,
+            children: Number,
+            dependents: Number,
+            workingMembers: Number,
+            totalFamilyIncome: Number
         },
 
-        favorites: {
-            type: [mongoose.Schema.Types.ObjectId],
-            ref: 'Scheme',
+        // 7. Housing
+        housing: {
+            houseOwnership: { type: String, enum: ['Owned', 'Rented', 'Leased', 'Homeless'] },
+            houseType: { type: String, enum: ['Pucca', 'Kutcha', 'Semi-Pucca'] },
+            hasElectricity: Boolean,
+            hasToilet: Boolean,
+            hasLPG: Boolean
         },
 
-        gender: {
-            type: String,
-            enum: ['male', 'female', 'other'],
-        },
-        district: {
-            type: String,
-        },
-        areaType: {
-            type: String,
-            enum: ['Urban', 'Rural'],
-        },
-        educationLevel: {
-            type: String,
-        },
-        previousPercentage: {
-            type: Number,
-        },
-        familyIncome: {
-            type: Number,
-        },
-        isMinority: {
-            type: Boolean,
-            default: false,
-        },
-        isFirstGenerationGraduate: {
-            type: Boolean,
-            default: false,
-        },
-        isSingleGirlChild: {
-            type: Boolean,
-            default: false,
-        },
-        isDifferentlyAbled: {
-            type: Boolean,
-            default: false,
-        },
-        hasCompletedProfile: {
-            type: Boolean,
-            default: false,
+        // 8. Health & Disability
+        healthAndDisability: {
+            hasDisability: Boolean,
+            disabilityType: String,
+            disabilityPercentage: Number,
+            hasDisabilityCertificate: Boolean,
+            hasChronicIllness: Boolean,
+            hasHealthInsurance: Boolean
         },
 
+        // 9. Agriculture
+        agriculture: {
+            isFarmer: Boolean,
+            landOwnership: Boolean,
+            landAreaAcres: Number,
+            landType: { type: String, enum: ['Irrigated', 'Rain-fed', 'Dry'] },
+            farmerType: { type: String, enum: ['Small', 'Marginal', 'Large', 'Tenant', 'Agricultural Labourer'] }
+        },
+
+        // 10. Documents Readiness
+        documents: {
+            hasAadhaar: Boolean,
+            aadhaarNumber: String,
+            hasPan: Boolean,
+            hasRationCard: Boolean,
+            rationCardType: { type: String, enum: ['PHH', 'AAY', 'NPHH', 'NPHH-S', 'NPHH-NC'] },
+            hasIncomeCertificate: Boolean,
+            hasBankPassbook: Boolean
+        }
     },
-
     { timestamps: true }
 );
 
@@ -117,7 +170,6 @@ userSchema.pre("save", async function (next) {
     }
 });
 
-
 // Compare password with hashed password
 userSchema.methods.isPasswordCorrect = async function (candidatePassword) {
     try {
@@ -127,13 +179,11 @@ userSchema.methods.isPasswordCorrect = async function (candidatePassword) {
     }
 };
 
-
 // Generate access token
 userSchema.methods.generateAccessToken = async function () {
     return jwt.sign(
         {
             _id: this._id,
-            // username: this.username,
             email: this.email,
             name: this.name,
         },
@@ -143,7 +193,6 @@ userSchema.methods.generateAccessToken = async function () {
         }
     );
 };
-
 
 // Generate refresh token
 userSchema.methods.generateRefreshToken = async function () {

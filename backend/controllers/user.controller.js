@@ -121,9 +121,9 @@ const login = async (req, res) => {
 
         // sending accessToken and refreshToken as cookies
         const options = {
-            httpOnly: true,  // Cannot be accessed via JavaScript (only sent with HTTP requests)
-            secure: process.env.NODE_ENV === 'production', // Set to true only in production (for HTTPS)
-            sameSite: 'None', // Allows cross-origin cookie transmission (important for cross-origin requests)
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
         };
 
 
@@ -188,9 +188,9 @@ const refreshAccessToken = async (req, res) => {
         }
 
         const options = {
-            httpOnly: true,  // Cannot be accessed via JavaScript (only sent with HTTP requests)
-            secure: process.env.NODE_ENV === 'production', // Set to true only in production (for HTTPS)
-            sameSite: 'None', // Allows cross-origin cookie transmission (important for cross-origin requests)
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
         };
 
         const { accessToken, newRefreshToken } =
@@ -237,9 +237,9 @@ const logout = async (req, res) => {
         );
 
         const options = {
-            httpOnly: true,  // Cannot be accessed via JavaScript (only sent with HTTP requests)
-            secure: process.env.NODE_ENV === 'production', // Set to true only in production (for HTTPS)
-            sameSite: 'None', // Allows cross-origin cookie transmission (important for cross-origin requests)
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
         };
         return res
             .status(200)

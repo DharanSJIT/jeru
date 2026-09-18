@@ -14,10 +14,10 @@ export const getPersonalizedRecommendations = async (page = 1, limit = 9) => {
         });
 
         return {
-            schemes: response.data.data.schemes,
-            totalPages: response.data.data.totalPages,
-            currentPage: response.data.data.currentPage,
-            totalSchemes: response.data.data.totalSchemes
+            schemes: response.data.data.docs || [],
+            totalPages: response.data.data.totalPages || 1,
+            currentPage: response.data.data.page || 1,
+            totalSchemes: response.data.data.totalDocs || 0
         };
     } catch (error) {
         throw error; // Ensure the error is thrown to be handled in the calling code

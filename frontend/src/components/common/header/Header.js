@@ -3,6 +3,7 @@ import { LogIn, User, ShieldCheck, ChevronDown } from 'lucide-react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../context/UserContext";
 import userAuthenticatedAxiosInstance from "../../../services/users/userAuthenticatedAxiosInstance";
+import { toast } from "react-hot-toast";
 import lionlogo from "../../../assets/lionsymbol.png";
 import { useTranslation } from 'react-i18next';
 
@@ -67,6 +68,17 @@ const Header = () => {
             setIsUserLoggedIn(false);
             setIsProfileOpen(false);
             navigate("/");
+            toast.success("Logged out successfully", {
+                style: {
+                    background: '#fef2f2',
+                    color: '#dc2626',
+                    border: '1px solid #f87171'
+                },
+                iconTheme: {
+                    primary: '#dc2626',
+                    secondary: '#fef2f2',
+                },
+            });
         }
     };
 

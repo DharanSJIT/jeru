@@ -6,7 +6,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export const generateSchemeResponse = async (scheme, question, language = 'en') => {
     try {
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
         
         // Create a context-aware prompt with language instruction
         const prompt = `

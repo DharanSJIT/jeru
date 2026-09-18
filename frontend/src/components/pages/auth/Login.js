@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../../../context/UserContext";
 import toast from "react-hot-toast";
@@ -14,6 +14,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
     const { setIsUserLoggedIn } = useContext(UserContext);
 
     const handleSubmit = async (event) => {
@@ -38,8 +39,9 @@ const Login = () => {
                 localStorage.setItem("accessToken", data.user.accessToken);
                 setIsUserLoggedIn(true);
                 toast.success("Signed in successfully!");
-                // Direct user to profile to fill out the form
-                navigate("/profile"); 
+                // Direct user to previous page or profile
+                const origin = location.state?.from?.pathname || "/profile";
+                navigate(origin); 
             } else {
                 toast.error(data.message || "Failed to login");
             }

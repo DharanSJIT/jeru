@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getSchemeById, saveFavoriteSchemes, removeFavoriteSchemes, getFavoriteSchemes } from "../../../services/schemes/schemeService";
-import { ArrowLeft, Target, List, FileText, Users, Download, Share2, Bookmark } from 'lucide-react';
+import { ArrowLeft, Target, List, FileText, Users, Download, Share2, Bookmark, Map } from 'lucide-react';
 import ChatBot from "../../common/chatbot/ChatBot";
 import { generatePDF } from "../../../helper/generatePdf";
 import { shareScheme } from "../../../helper/shareScheme";
@@ -248,6 +248,14 @@ const SchemeDetails = () => {
                             <Share2 size={20} />
                             Share
                         </button>
+                        
+                        <Link
+                            to={`/roadmap/${scheme?._id}`}
+                            className="ml-auto px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 flex items-center gap-2 transition-colors duration-200 shadow-sm"
+                        >
+                            <Map size={20} />
+                            View Roadmap
+                        </Link>
                     </div>
                 </div>
 

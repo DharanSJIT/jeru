@@ -46,9 +46,42 @@ const Recommendations = () => {
 
     if (loading) {
         return (
-            <div className="text-center py-8">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#0052CC]"></div>
-                <p className="mt-2 text-xl">Loading recommendations...</p>
+            <div className="min-h-screen bg-gray-50/50 flex flex-col items-center justify-center p-6">
+                <div className="relative">
+                    {/* Outer pulsing rings */}
+                    <div className="absolute inset-0 border-4 border-[#0052CC]/20 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+                    <div className="absolute inset-[-1rem] border-2 border-[#0052CC]/10 rounded-full animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }}></div>
+                    
+                    {/* Core spinner */}
+                    <div className="relative flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg border-4 border-gray-50 z-10">
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-[#0052CC]"></div>
+                    </div>
+                </div>
+
+                <div className="mt-12 text-center max-w-md">
+                    <h2 className="text-[#0052CC] font-bold text-lg tracking-widest uppercase mb-3 animate-pulse">
+                        Analyzing Your Profile...
+                    </h2>
+                    <p className="text-gray-500 text-sm font-medium tracking-wide leading-relaxed">
+                        CROSS-REFERENCING YOUR DETAILS AGAINST HUNDREDS OF GOVERNMENT SCHEMES TO FIND YOUR PERFECT MATCHES
+                    </p>
+                </div>
+
+                {/* Skeleton Cards Grid for background context */}
+                <div className="w-full max-w-5xl mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-40">
+                    {[1, 2, 3].map((item) => (
+                        <div key={item} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm animate-pulse">
+                            <div className="h-6 bg-gray-200 rounded-md w-3/4 mb-4"></div>
+                            <div className="h-4 bg-gray-100 rounded-md w-full mb-2"></div>
+                            <div className="h-4 bg-gray-100 rounded-md w-5/6 mb-6"></div>
+                            <div className="flex gap-2 mb-6">
+                                <div className="h-6 bg-blue-50 rounded-full w-16"></div>
+                                <div className="h-6 bg-blue-50 rounded-full w-20"></div>
+                            </div>
+                            <div className="h-10 bg-gray-100 rounded-lg w-full"></div>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }

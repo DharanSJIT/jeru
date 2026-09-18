@@ -8,6 +8,7 @@ import ProtectedRoutes from "./routes/ProtectedRoutes";
 import Unauthenticated from "./routes/Unauthenticated";
 import UserProvider from "./context/UserContext";
 import SchemeDetails from "./components/pages/schemeDetails/SchemeDetails";
+import Roadmap from "./components/pages/roadmap/Roadmap";
 import Schemes from "./components/pages/schemes/Schemes";
 import Profile from "./components/pages/profile/Profile";
 import Recommendations from "./components/pages/recommendations/Recommendations";
@@ -55,6 +56,7 @@ function App() {
                             <Route path="/" element={<Home />} />
                             <Route path="/schemes" element={<Schemes />} />
                             <Route path="/scheme/:id" element={<SchemeDetails />} />
+                            <Route path="/roadmap/:id" element={<Roadmap />} />
                             {/* Unauthenticated Routes - Only Accessible When Logged Out */}
                             <Route element={<Unauthenticated />}>
                                 <Route path="/login" element={<Login />} />

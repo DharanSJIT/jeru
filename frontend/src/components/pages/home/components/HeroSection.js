@@ -56,7 +56,7 @@ const HeroSection = () => {
             <div className="absolute -top-24 right-[8%] w-72 h-72 border-[3px] border-brand/10 rounded-[3rem] rotate-12 hidden lg:block pointer-events-none" aria-hidden="true" />
             <div className="absolute top-[18%] right-[30%] w-16 h-16 border-2 border-brand/25 rounded-2xl hidden xl:block pointer-events-none animate-float-slow" aria-hidden="true" />
 
-            <div className="container mx-auto px-6 md:px-12 z-10 grid lg:grid-cols-[1.35fr_0.65fr] gap-14 lg:gap-14 items-center">
+            <div className="container mx-auto px-6 md:px-12 z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-14 items-center">
                 {/* Left — staggered entrance */}
                 <div className="flex flex-col items-start w-full max-w-2xl">
                     {/* Eyebrow badge */}
@@ -106,7 +106,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Right — sliding image carousel with floating chips */}
-                <div className="relative w-full max-w-[560px] mx-auto lg:ml-auto animate-slide-left stagger-3 mb-4">
+                <div className="relative w-full max-w-[680px] mx-auto lg:ml-auto animate-slide-left stagger-3 mb-4">
                     {/* Offset deco frames (flat borders) */}
                     <div className="deco-frame -top-5 -left-5 w-40 h-40 rotate-6" aria-hidden="true" />
                     <div className="deco-frame -bottom-6 -right-4 w-56 h-56 -rotate-3 border-brand/15" aria-hidden="true" />

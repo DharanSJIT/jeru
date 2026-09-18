@@ -150,9 +150,7 @@ const HeroCarousel = () => {
                             <img
                                 src={slide.src}
                                 alt={i === index ? slide.alt : ""}
-                                className={`w-full h-full object-cover ${
-                                    i === index ? "slide-zoom" : ""
-                                }`}
+                                className="w-full h-full object-contain bg-black/20"
                                 loading={i === 0 ? "eager" : "lazy"}
                                 fetchpriority={i === 0 ? "high" : "low"}
                                 decoding="async"

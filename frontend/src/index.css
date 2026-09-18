@@ -1,1 +1,236 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchored sections clear the fixed header when scrolled to */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+::selection {
+  background: #0052CC;
+  color: #FFFFFF;
+}
+
+/* Slim, brand-tinted scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 9999px;
+  border: 2px solid #F1F5F9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0052CC;
+}
+
+/* ---------- Layout helpers ---------- */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- Scroll-reveal system ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.reveal-left {
+  transform: translateX(-48px);
+}
+.reveal.reveal-right {
+  transform: translateX(48px);
+}
+.reveal.reveal-zoom {
+  transform: scale(0.92);
+}
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.48s; }
+.reveal-delay-5 { transition-delay: 0.6s; }
+
+/* Staggered load animation (mount-time, non-scroll) */
+.stagger-1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: both; }
+.stagger-2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: both; }
+.stagger-3 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: both; }
+.stagger-4 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: both; }
+.stagger-5 { animation-delay: 0.5s; opacity: 0; animation-fill-mode: both; }
+
+/* ---------- Shared component recipes ---------- */
+
+@layer components {
+  /* Primary blue pill button (all CTAs use one recipe) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white font-body font-semibold text-base px-7 py-3.5 transition-all duration-300 hover:bg-brand-dark hover:-translate-y-0.5 hover:shadow-brand-glow active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-accent/30 cursor-pointer;
+  }
+
+  /* Outline secondary button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-transparent text-primary border-2 border-slate-200 font-body font-semibold text-base px-7 py-3.5 transition-all duration-300 hover:border-accent hover:text-accent hover:bg-brand-light/40 active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-accent/30 cursor-pointer;
+  }
+
+  /* Section eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent mb-4;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply block w-8 h-px bg-accent;
+  }
+
+  /* Section heading */
+  .section-title {
+    @apply font-display font-bold text-3xl md:text-[42px] leading-[1.15] tracking-tight text-primary;
+  }
+
+  /* Underline-grow nav link */
+  .nav-link {
+    position: relative;
+    @apply font-body text-sm font-medium text-primary transition-colors duration-300 hover:text-brand;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    background: #0052CC;
+    border-radius: 9999px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link.nav-active::after {
+    transform: scaleX(1);
+  }
+  .nav-link.nav-active {
+    color: #0052CC;
+    font-weight: 600;
+  }
+
+  /* Flat decorative corner frame used behind imagery */
+  .deco-frame {
+    @apply absolute rounded-2xl border-2 border-brand/25 pointer-events-none;
+  }
+}
+
+/* ---------- Marquee ticker ---------- */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ---------- Button sheen sweep (flat white overlay, no gradient) ---------- */
+
+.sheen-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.sheen-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+.sheen-wrapper:hover::after {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(240%) skewX(-20deg);
+}
+
+/* ---------- FAQ grid-rows accordion ---------- */
+
+.faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-body.open {
+  grid-template-rows: 1fr;
+}
+.faq-body > div {
+  overflow: hidden;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

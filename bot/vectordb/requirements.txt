@@ -1,0 +1,4 @@
+# Standalone vector DB experiment. NOT used by server/ or bot/.
+pymilvus>=2.5
+fastembed>=0.5   # dense multilingual embedder + cross-encoder reranker (ONNX, no torch)
+numpy

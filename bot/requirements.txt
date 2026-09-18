@@ -1,0 +1,5 @@
+# Telegram bot (bot/). Server deps are in server/requirements.txt
+python-telegram-bot>=21.0
+httpx>=0.27
+python-dotenv>=1.0
+gTTS>=2.5

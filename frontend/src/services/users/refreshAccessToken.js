@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const refreshAccessToken = async () => {
-    const BACKEND_URL = `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/refresh-access-token`;
+    const BACKEND_URL = `${process.env.REACT_APP_BACKEND_URL || "http://localhost:5001"}/api/v1/users/refresh-access-token`;
     const token = localStorage.getItem("accessToken");
     console.log(`inside users refreshaccesstoken`);
     if (!token) {

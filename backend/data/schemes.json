@@ -1,0 +1,539 @@
+{
+  "dataset_name": "Tamil Nadu Government Schemes - 100 Scheme Demo Dataset",
+  "state": "Tamil Nadu",
+  "total_schemes": 100,
+  "record_structure": [
+    "id",
+    "scheme_name",
+    "short_name",
+    "state",
+    "level",
+    "category",
+    "tags",
+    "overview",
+    "eligibility",
+    "benefits",
+    "documents",
+    "apply",
+    "faq",
+    "source"
+  ],
+  "records": [
+    {
+      "id": "TN-SCH-001",
+      "scheme_name": "Tamil Nadu Kalaignar Magalir Urimai Thittam (KMUT)",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "Women & Social Welfare",
+      "tags": [
+        "women",
+        "social-welfare"
+      ],
+      "overview": "Monthly direct benefit to eligible women household heads under the state income-support programme.",
+      "eligibility": "Eligible women household heads meeting the scheme's household, income, asset and other conditions as notified by the Government of Tamil Nadu.",
+      "benefits": "₹1,000 per month by DBT for eligible beneficiaries, subject to current government rules.",
+      "documents": [
+        "Aadhaar",
+        "ration/family card",
+        "bank account details",
+        "mobile number",
+        "income/asset details as required."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Apply through the notified KMUT/e-Sevai channels when applications are open."
+      },
+      "faq": [
+        {
+          "question": "What is the Tamil Nadu Kalaignar Magalir Urimai Thittam (KMUT)?",
+          "answer": "Monthly direct benefit to eligible women household heads under the state income-support programme."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Eligible women household heads meeting the scheme's household, income, asset and other conditions as notified by the Government of Tamil Nadu."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "₹1,000 per month by DBT for eligible beneficiaries, subject to current government rules."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "Aadhaar; ration/family card; bank account details; mobile number; income/asset details as required."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Apply through the notified KMUT/e-Sevai channels when applications are open."
+        }
+      ],
+      "source": {
+        "department_portal": "https://tnesevai.tn.gov.in/Pages/ServiceList.aspx",
+        "verification_note": "Tamil Nadu Government welfare scheme; eligibility and payment rules are subject to current notifications."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-002",
+      "scheme_name": "Pudhumai Penn Scheme",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "Education & Women",
+      "tags": [
+        "education",
+        "women",
+        "students"
+      ],
+      "overview": "Supports girls from government and eligible aided schools to continue higher education.",
+      "eligibility": "Girl students meeting the notified schooling and higher-education conditions.",
+      "benefits": "₹1,000 per month through DBT.",
+      "documents": [
+        "School study certificate",
+        "Aadhaar",
+        "bank details",
+        "admission proof",
+        "community/income documents if requested."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Apply/verify through the institution and UMIS or the currently notified portal."
+      },
+      "faq": [
+        {
+          "question": "What is the Pudhumai Penn Scheme?",
+          "answer": "Supports girls from government and eligible aided schools to continue higher education."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Girl students meeting the notified schooling and higher-education conditions."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "₹1,000 per month through DBT."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "School study certificate; Aadhaar; bank details; admission proof; community/income documents if requested."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Apply/verify through the institution and UMIS or the currently notified portal."
+        }
+      ],
+      "source": {
+        "department_portal": "https://tils.tn.gov.in/schemes",
+        "verification_note": "Eligibility should be checked with the institution before submission."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-003",
+      "scheme_name": "Tamil Pudhalvan Scheme",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "Education",
+      "tags": [
+        "education",
+        "students"
+      ],
+      "overview": "Provides higher-education support to eligible boys who studied in government or eligible aided schools.",
+      "eligibility": "Boy students meeting the notified schooling and higher-education conditions.",
+      "benefits": "₹1,000 per month through DBT.",
+      "documents": [
+        "School study certificate",
+        "Aadhaar",
+        "bank details",
+        "admission proof",
+        "other documents requested by the institution."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Apply/verify through the institution and UMIS or the currently notified portal."
+      },
+      "faq": [
+        {
+          "question": "What is the Tamil Pudhalvan Scheme?",
+          "answer": "Provides higher-education support to eligible boys who studied in government or eligible aided schools."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Boy students meeting the notified schooling and higher-education conditions."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "₹1,000 per month through DBT."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "School study certificate; Aadhaar; bank details; admission proof; other documents requested by the institution."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Apply/verify through the institution and UMIS or the currently notified portal."
+        }
+      ],
+      "source": {
+        "department_portal": "https://tils.tn.gov.in/schemes",
+        "verification_note": "Rules and eligible school categories are subject to current notification."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-004",
+      "scheme_name": "Chief Minister's Breakfast Scheme",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "School Education",
+      "tags": [
+        "education",
+        "school",
+        "children"
+      ],
+      "overview": "Provides breakfast to eligible children in government primary schools to support nutrition and school attendance.",
+      "eligibility": "Children studying in covered government primary schools/classes notified by the programme.",
+      "benefits": "Free breakfast on school days in participating schools.",
+      "documents": [
+        "Normally no individual application",
+        "school enrolment records are used."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Access through the participating government school."
+      },
+      "faq": [
+        {
+          "question": "What is the Chief Minister's Breakfast Scheme?",
+          "answer": "Provides breakfast to eligible children in government primary schools to support nutrition and school attendance."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Children studying in covered government primary schools/classes notified by the programme."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "Free breakfast on school days in participating schools."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "Normally no individual application; school enrolment records are used."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Access through the participating government school."
+        }
+      ],
+      "source": {
+        "department_portal": "https://www.tnschools.gov.in/",
+        "verification_note": "Availability and menu are administered by the school/local authority."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-005",
+      "scheme_name": "Puratchi Thalaivar MGR Nutritious Meal Programme",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "School Education",
+      "tags": [
+        "education",
+        "school",
+        "children"
+      ],
+      "overview": "Provides nutritious meals to school children covered by the Tamil Nadu noon-meal programme.",
+      "eligibility": "Students in eligible government/local-body and participating schools/classes.",
+      "benefits": "Free nutritious meal according to the programme guidelines.",
+      "documents": [
+        "Normally no separate beneficiary application",
+        "school records are used."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Access through the school implementing the programme."
+      },
+      "faq": [
+        {
+          "question": "What is the Puratchi Thalaivar MGR Nutritious Meal Programme?",
+          "answer": "Provides nutritious meals to school children covered by the Tamil Nadu noon-meal programme."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Students in eligible government/local-body and participating schools/classes."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "Free nutritious meal according to the programme guidelines."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "Normally no separate beneficiary application; school records are used."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Access through the school implementing the programme."
+        }
+      ],
+      "source": {
+        "department_portal": "https://www.tnschools.gov.in/",
+        "verification_note": "Coverage and menu follow current department guidelines."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-006",
+      "scheme_name": "Illam Thedi Kalvi",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "School Education",
+      "tags": [
+        "education",
+        "school",
+        "children"
+      ],
+      "overview": "Community-based learning support intended to strengthen foundational learning after school hours.",
+      "eligibility": "School-age children in participating communities and programme locations.",
+      "benefits": "Supplementary learning support through community volunteers/centres.",
+      "documents": [
+        "Usually no individual document submission",
+        "participation is coordinated through schools/local programme teams."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Contact the participating school/community learning centre."
+      },
+      "faq": [
+        {
+          "question": "What is the Illam Thedi Kalvi?",
+          "answer": "Community-based learning support intended to strengthen foundational learning after school hours."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "School-age children in participating communities and programme locations."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "Supplementary learning support through community volunteers/centres."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "Usually no individual document submission; participation is coordinated through schools/local programme teams."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Contact the participating school/community learning centre."
+        }
+      ],
+      "source": {
+        "department_portal": "https://www.tnschools.gov.in/",
+        "verification_note": "Implementation may vary by district and current programme phase."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-007",
+      "scheme_name": "Ennum Ezhuthum Mission",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "School Education",
+      "tags": [
+        "education",
+        "school",
+        "children"
+      ],
+      "overview": "Foundational literacy and numeracy initiative for early-grade learners.",
+      "eligibility": "Students in the classes covered by the current Tamil Nadu School Education implementation.",
+      "benefits": "Structured literacy and numeracy learning support and classroom resources.",
+      "documents": [
+        "Generally no individual application",
+        "school enrolment determines participation."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Access through the participating government school."
+      },
+      "faq": [
+        {
+          "question": "What is the Ennum Ezhuthum Mission?",
+          "answer": "Foundational literacy and numeracy initiative for early-grade learners."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Students in the classes covered by the current Tamil Nadu School Education implementation."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "Structured literacy and numeracy learning support and classroom resources."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "Generally no individual application; school enrolment determines participation."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Access through the participating government school."
+        }
+      ],
+      "source": {
+        "department_portal": "https://www.tnschools.gov.in/",
+        "verification_note": "Class coverage and implementation are subject to current school-education guidelines."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-008",
+      "scheme_name": "Naan Mudhalvan",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "Skill Development & Education",
+      "tags": [
+        "tamil-nadu",
+        "government-scheme"
+      ],
+      "overview": "Provides career guidance, industry-linked skill training and employability support for students and youth.",
+      "eligibility": "Students/youth enrolled in participating institutions or programmes.",
+      "benefits": "Skill courses, career guidance, industry exposure and related employability support.",
+      "documents": [
+        "Student/institution profile and identity details as requested on the portal."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Register through the Naan Mudhalvan platform/institution when the relevant course is open."
+      },
+      "faq": [
+        {
+          "question": "What is the Naan Mudhalvan?",
+          "answer": "Provides career guidance, industry-linked skill training and employability support for students and youth."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Students/youth enrolled in participating institutions or programmes."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "Skill courses, career guidance, industry exposure and related employability support."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "Student/institution profile and identity details as requested on the portal."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Register through the Naan Mudhalvan platform/institution when the relevant course is open."
+        }
+      ],
+      "source": {
+        "department_portal": "https://www.tn.gov.in/",
+        "verification_note": "Course availability varies by institution and notification."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-009",
+      "scheme_name": "Tamil Nadu Chief Minister's Talent Search Examination",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "Education",
+      "tags": [
+        "education",
+        "students"
+      ],
+      "overview": "Identifies and supports academically talented school students through a state-level talent-search mechanism.",
+      "eligibility": "Students in the classes and categories specified in the current examination notification.",
+      "benefits": "Scholarship/recognition benefits as notified for selected students.",
+      "documents": [
+        "School registration",
+        "student details",
+        "examination application documents as prescribed."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Apply through the Directorate of Government Examinations/school as notified."
+      },
+      "faq": [
+        {
+          "question": "What is the Tamil Nadu Chief Minister's Talent Search Examination?",
+          "answer": "Identifies and supports academically talented school students through a state-level talent-search mechanism."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Students in the classes and categories specified in the current examination notification."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "Scholarship/recognition benefits as notified for selected students."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "School registration; student details; examination application documents as prescribed."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Apply through the Directorate of Government Examinations/school as notified."
+        }
+      ],
+      "source": {
+        "department_portal": "https://tils.tn.gov.in/schemes",
+        "verification_note": "Dates, classes and award details can change by notification."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    },
+    {
+      "id": "TN-SCH-010",
+      "scheme_name": "RIMC Dehradun Scholarship, Tamil Nadu",
+      "short_name": "",
+      "state": "Tamil Nadu",
+      "level": "State",
+      "category": "Higher Education",
+      "tags": [
+        "education",
+        "higher-education",
+        "students"
+      ],
+      "overview": "State assistance for Tamil Nadu students studying at Rashtriya Indian Military College, Dehradun.",
+      "eligibility": "Students studying at RIMC who satisfy the state scholarship conditions.",
+      "benefits": "₹4,000 per month according to the Directorate of Collegiate Education listing.",
+      "documents": [
+        "Study/admission proof",
+        "identity and bank details",
+        "other documents prescribed by DCE."
+      ],
+      "apply": {
+        "mode": "Online / Offline / Institution / District Office",
+        "instructions": "Apply through the Directorate of Collegiate Education as notified."
+      },
+      "faq": [
+        {
+          "question": "What is the RIMC Dehradun Scholarship, Tamil Nadu?",
+          "answer": "State assistance for Tamil Nadu students studying at Rashtriya Indian Military College, Dehradun."
+        },
+        {
+          "question": "Who is eligible?",
+          "answer": "Students studying at RIMC who satisfy the state scholarship conditions."
+        },
+        {
+          "question": "What are the benefits?",
+          "answer": "₹4,000 per month according to the Directorate of Collegiate Education listing."
+        },
+        {
+          "question": "What documents are required?",
+          "answer": "Study/admission proof; identity and bank details; other documents prescribed by DCE."
+        },
+        {
+          "question": "How do I apply?",
+          "answer": "Apply through the Directorate of Collegiate Education as notified."
+        }
+      ],
+      "source": {
+        "department_portal": "https://tndce.tn.gov.in/Home/scholarship",
+        "verification_note": "The amount and procedure should be reconfirmed for the current academic year."
+      },
+      "data_note": "Curated hackathon/demo dataset from Tamil Nadu government portals and scheme listings. Verify the latest Government Order/notification before production use."
+    }
+  ]
+}

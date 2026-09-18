@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Home",
+    "schemes": "Schemes",
+    "about": "About",
+    "profile": "Profile"
+  },
+  "hero": {
+    "title": "Find Government Schemes For You",
+    "subtitle": "Discover tailored schemes and scholarships across Tamil Nadu."
+  },
+  "profile": {
+    "title": "Personal Eligibility Form",
+    "subtitle": "Complete this form to discover personalized government schemes & scholarships."
+  }
+}

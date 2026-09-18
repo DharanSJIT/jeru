@@ -3,7 +3,7 @@ import refreshAccessToken from "./refreshAccessToken";
 
 const createAxiosInstance = (endpoint, setIsUserLoggedIn) => {
     const axiosInstance = axios.create({
-        baseURL: `${process.env.REACT_APP_BACKEND_URL}${endpoint}`,
+        baseURL: `${process.env.REACT_APP_BACKEND_URL || "http://localhost:5001"}${endpoint}`,
         withCredentials: true,
         credentials: "include",
         // headers: {

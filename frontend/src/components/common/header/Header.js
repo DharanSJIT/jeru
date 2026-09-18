@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../context/UserContext";
 import userAuthenticatedAxiosInstance from "../../../services/users/userAuthenticatedAxiosInstance";
 import lionlogo from "../../../assets/lionsymbol.png";
+import { useTranslation } from 'react-i18next';
+
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +16,10 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const profileRef = useRef(null);
+    const { t, i18n } = useTranslation();
 
     const userAxiosInstance = userAuthenticatedAxiosInstance('/api/v1/users');
+
 
     // Close the mobile menu whenever the route changes
     useEffect(() => {
@@ -76,6 +80,11 @@ const Header = () => {
         }
     };
 
+    const toggleLanguage = () => {
+        const newLang = i18n.language === 'en' ? 'ta' : 'en';
+        i18n.changeLanguage(newLang);
+    };
+
     return (
         <>
             <header
@@ -115,19 +124,26 @@ const Header = () => {
 
                     {/* Desktop nav */}
                     <nav className="hidden lg:flex items-center gap-10" aria-label="Primary">
-                        <button onClick={() => scrollToSection("home")} className={`nav-link ${location.pathname === "/" ? "nav-active" : ""}`}>Home</button>
-                        <button onClick={() => scrollToSection("about")} className="nav-link">About</button>
-                        <Link to="/schemes" className={`nav-link ${location.pathname.startsWith("/scheme") ? "nav-active" : ""}`}>Schemes</Link>
-                        <Link to="/recommendations" className={`nav-link ${location.pathname.startsWith("/recommendations") ? "nav-active" : ""}`}>
+                        <button onClick={() => scrollToSection("home")} className={`nav-link ${location.pathname === "/" ? "nav-active" : ""}`}>{t('nav.home', 'Home')}</button>
+                        <button onClick={() => scrollToSection("about")} className="nav-link">{t('nav.about', 'About')}</button>
+                        <Link to="/schemes" className={`nav-link ${location.pathname.startsWith("/scheme") ? "nav-active" : ""}`}>{t('nav.schemes', 'Schemes')}</Link>
+                        <Link to="/profile" className={`nav-link ${location.pathname.startsWith("/profile") ? "nav-active" : ""}`}>
                             <span className="inline-flex items-center gap-1.5">
-                                <ShieldCheck className="w-4 h-4" aria-hidden="true" />
-                                Suggests
+                                <User className="w-4 h-4" aria-hidden="true" />
+                                {t('nav.profile', 'Profile')}
                             </span>
                         </Link>
                     </nav>
 
                     {/* Right actions */}
                     <div className="flex items-center gap-3">
+                        <button 
+                            onClick={toggleLanguage}
+                            className="text-sm font-semibold text-brand px-3 py-1.5 border border-brand rounded-md hover:bg-brand hover:text-white transition-colors"
+                        >
+                            {i18n.language === 'en' ? 'தமிழ்' : 'English'}
+                        </button>
+
                         {isUserLoggedIn ? (
                             <div className="relative" ref={profileRef}>
                                 <button
@@ -192,10 +208,11 @@ const Header = () => {
                     aria-hidden={!isOpen}
                 >
                     <nav className="mx-4 mt-3 mb-4 bg-white border border-slate-200 shadow-lift rounded-2xl px-4 py-3 flex flex-col" aria-label="Mobile">
-                        <MobileNavLink to="/" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
-                        <MobileNavLink to="/" onClick={() => scrollToSection("about")}>About</MobileNavLink>
-                        <MobileNavLink to="/schemes" onClick={() => setIsOpen(false)}>Schemes</MobileNavLink>
-                        <MobileNavLink to="/recommendations" onClick={() => setIsOpen(false)}>Suggests</MobileNavLink>
+                        <MobileNavLink to="/" onClick={() => setIsOpen(false)}>{t('nav.home', 'Home')}</MobileNavLink>
+                        <MobileNavLink to="/" onClick={() => scrollToSection("about")}>{t('nav.about', 'About')}</MobileNavLink>
+                        <MobileNavLink to="/schemes" onClick={() => setIsOpen(false)}>{t('nav.schemes', 'Schemes')}</MobileNavLink>
+                        <MobileNavLink to="/profile" onClick={() => setIsOpen(false)}>{t('nav.profile', 'Profile')}</MobileNavLink>
+
                         {!isUserLoggedIn && (
                             <Link
                                 to="/login"

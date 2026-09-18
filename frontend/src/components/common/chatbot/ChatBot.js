@@ -180,7 +180,7 @@ const ChatBot = ({ schemeId }) => {
 
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_BACKEND_URL}/api/v1/chatbot/scheme-response`,
+                `${process.env.REACT_APP_BACKEND_URL || "http://localhost:5001"}/api/v1/chatbot/scheme-response`,
                 {
                     schemeId,
                     question: userMessage,

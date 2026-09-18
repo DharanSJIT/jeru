@@ -1,7 +1,7 @@
 import axios from "axios";
 import userAuthenticatedAxiosInstance from "../users/userAuthenticatedAxiosInstance";
-// const BACKEND_URL = `${process.env.REACT_APP_BACKEND_URL}/api/v1/schemes`;
-const BACKEND_URLV2 = `${process.env.REACT_APP_BACKEND_URL}/api/v2/schemes`;
+// const BACKEND_URL = `${process.env.REACT_APP_BACKEND_URL || "http://localhost:5001"}/api/v1/schemes`;
+const BACKEND_URLV2 = `${process.env.REACT_APP_BACKEND_URL || "http://localhost:5001"}/api/v2/schemes`;
 const userAxiosInstance = userAuthenticatedAxiosInstance('/api/v2/schemes');
 
 // Create axios instance with default config

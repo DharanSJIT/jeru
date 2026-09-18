@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ChevronRight, FileText, BadgeCheck, ArrowDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import HeroCarousel from "./HeroCarousel";
+import { useTranslation } from 'react-i18next';
 
 const ROTATING_WORDS = ["you", "your family", "students", "farmers", "women", "entrepreneurs"];
 
@@ -35,6 +36,7 @@ const RotatingWord = () => {
 
 const HeroSection = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const handleExplore = () => navigate("/schemes");
 
@@ -70,18 +72,14 @@ const HeroSection = () => {
                     {/* Headline */}
                     <div className="overflow-hidden mb-6">
                         <h1 className="text-[34px] leading-[1.15] sm:text-[44px] lg:text-[52px] font-display font-bold tracking-tight text-primary animate-fade-up stagger-2 [text-wrap:balance]">
-                            <span className="block">The right scheme</span>
-                            <span className="block">
-                                for <RotatingWord />
-                            </span>
+                            <span className="block">{t('hero.title', 'Find Government Schemes For You')}</span>
                         </h1>
                     </div>
 
                     {/* Subtext */}
                     <div className="overflow-hidden mb-10">
                         <p className="text-lg md:text-xl font-body text-secondary leading-relaxed max-w-xl animate-fade-up stagger-3">
-                            Makkal Thunai unites 500+ central and state schemes with eligibility
-                            checks, so every citizen claims the benefits they deserve.
+                            {t('hero.subtitle', 'Discover tailored schemes and scholarships across Tamil Nadu.')}
                         </p>
                     </div>
 
